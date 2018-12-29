@@ -8,7 +8,7 @@
     <div class="title">
       <div class="container">
         <div class="row">
-          <div class="col-lg-12">
+          <div id="SubmitCfpTitle" class="col-lg-12">
             <h2>Submit CFP</h2>
             Fill out the form underneath to submit a CFP you've spotted! Please be sure it is not already in our system.<br /><br />
           </div>
@@ -336,7 +336,7 @@
                 autoclose: true
             }).on('changeDate', function(e) {
                 $('#eventEndDate').datepicker('setStartDate', e.date);
-                cfpToSubmit.eventStartDate = e.date.toISOString();
+                cfpToSubmit.eventStartDate = e.date.toLocaleDateString("en-US");
             });
 
             $('#eventEndDate').datepicker({
@@ -344,7 +344,7 @@
                 startDate: '0d',
                 autoclose: true
             }).on('changeDate', function(e) {
-                cfpToSubmit.eventEndDate = e.date.toISOString();
+                cfpToSubmit.eventEndDate = e.date.toLocaleDateString("en-US");
             });
 
             $('#eventCfpCloseDate').datepicker({
@@ -352,7 +352,7 @@
                 startDate: '0d',
                 autoclose: true
             }).on('changeDate', function(e) {
-                cfpToSubmit.cfpEndDate = e.date.toISOString();
+                cfpToSubmit.cfpEndDate = e.date.toLocaleDateString("en-US");
             });
 
             $('#cfpDecisionDate').datepicker({
@@ -360,7 +360,7 @@
                 startDate: '0d',
                 autoclose: true
             }).on('changeDate', function(e) {
-                cfpToSubmit.cfpDecisionDate = e.date.toISOString();
+                cfpToSubmit.cfpDecisionDate = e.date.toLocaleDateString("en-US");
             });
 
             var autocomplete = new google.maps.places.Autocomplete(document.getElementById('eventLocation'));
